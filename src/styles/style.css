@@ -340,6 +340,8 @@ button:hover{
     max-width: 150px;
     min-width: 150px;
     margin-top: 10px;
+    border-right: none;
+    text-decoration:underline
   }
   
   .card-description{
@@ -353,7 +355,14 @@ button:hover{
     margin: auto;
     margin-top: 10px;
   }
-
+  .buttons-container{
+display: flex;
+flex-direction: row;
+gap:20px;
+    
+    
+    
+  }
 
 }
 
