@@ -20,7 +20,6 @@ const TaskForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (ev) => {
-    ev.preventDefault();
     setCount(count + 1);
     dispatch(
       addTask({
@@ -31,6 +30,8 @@ const TaskForm = () => {
         completed: true,
       })
     );
+    ev.preventDefault();
+    ev.target.reset();
   };
 
   return (

@@ -314,7 +314,12 @@ button:hover{
   }
 }
 
-
+@media (max-width: 1100px) {
+  .card {
+  display: flex;
+  flex-direction: column;
+  }
+}
 
 
 
