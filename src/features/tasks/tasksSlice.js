@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+
 const initialState = {
   tasklist: [{}],
 };
@@ -11,7 +12,6 @@ const tasksSlice = createSlice({
     addTask: (state, action) => {
       console.log("estado de add", state);
       state.tasklist.push(action.payload);
-      alert("Task add ok");
     },
     deleteTask: (state, action) => {
       const del = state.tasklist.find((task) => task.id === action.payload);

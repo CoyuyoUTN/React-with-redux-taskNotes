@@ -2,6 +2,8 @@ import { useState } from "react";
 import { addTask } from "../features/tasks/tasksSlice";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const TaskForm = () => {
   const [task, setTask] = useState({
@@ -30,14 +32,28 @@ const TaskForm = () => {
         completed: true,
       })
     );
+
     ev.preventDefault();
-    ev.target.reset();
+    const notify = () => toast("Task added succesfully!");
+    notify();
   };
 
   return (
     <div className="center">
       <h1>New task</h1>
+      <div></div>
       <form onSubmit={handleSubmit}>
+        <ToastContainer
+          position="top-left"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
         <div className="inputbox">
           <input
             id="title"
